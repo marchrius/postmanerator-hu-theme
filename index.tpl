@@ -135,14 +135,14 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="width: 20%;">Status</th>
-                                                    <td>{{ $res.ResponseCode.Code }} {{ $res.ResponseCode.Name }}</td>
+                                                    <td>{{ $res.StatusCode }} {{ $res.Status }}</td>
                                                 </tr>
                                                 {{ range $res.Headers }}
                                                 <tr>
                                                     <th style="width: 20%;">{{ .Name }}</th>
                                                     <td>{{ .Value }}</td>
                                                 </tr>
-                                                {{ end }} {{ if hasContent $res.Text }} {{ with $example := indentJSON $res.Text }}
+                                                {{ end }} {{ if hasContent $res.Body }} {{ with $example := indentJSON $res.Body }}
                                                 <tr>
                                                     <td class="doc response-text-sample" colspan="2">
                                                         <pre><code>{{ $example }}</code></pre>
